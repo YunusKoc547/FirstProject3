@@ -1,0 +1,35 @@
+package day59;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ExceptionPractice2 {
+
+    public static void main(String[] args) {
+
+        System.out.println("The Start");
+        String name = "Furkan";
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Character at what index you want to get from Furkan's name?");
+
+        try {
+            int targetIndex = scan.nextInt();
+            System.out.println(name.charAt(targetIndex));
+            System.out.println("end of try");
+
+        }catch (StringIndexOutOfBoundsException e) {
+
+            System.out.println("You are out of bounds!!!");
+            System.out.println("Enter between 0 and " + name.length() );
+
+        }catch (InputMismatchException bla) {
+
+            System.out.println("Input mismatch, enter number");
+            System.out.println("Here is what you get if you enter 0 : \"" + name.charAt(0) + "\"");
+
+
+        }
+        System.out.println("The End");
+    }
+}
